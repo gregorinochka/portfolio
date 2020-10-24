@@ -1,0 +1,341 @@
+.container{
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-full{
+    margin: 0 auto;
+    width: 100%;
+}
+
+/*Preloader*/
+.preloader{
+    position: fixed;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    background-color: white;
+    z-index: 1000;
+    transition: 0.5s;
+}
+
+.preloader > .preloader-body{
+    background-image: url("../img/preloader.gif");
+    background-position: center;
+    width: 200px;
+    height: 200px;
+}
+
+.preloader > .preloader-text{
+    color: rgb(4, 187, 117);
+    font-size: 36px;
+    text-align: center;
+}
+
+.preloader > .preloader-text > .fed{
+    text-transform: uppercase;
+    color: rgb(110, 110, 110);
+}
+
+.preloader > .preloader-text > p{
+    color: rgb(110, 110, 110);
+    font-size: 24px;
+}
+
+.preloader > .preloader-text > p > .fed{
+    text-transform: uppercase;
+}
+
+.preloader > .preloader-text > p > .folio{
+    color: rgb(4, 187, 117);
+}
+
+.hide{
+    opacity: 0;
+}
+
+.hidden-y{
+    overflow-y: hidden;
+}
+
+/*Preloade*/
+
+.navbar{
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    width: 25%;
+    position: fixed;
+    background-color: rgb(32, 32, 32);
+    z-index: 102;
+    left: -30%;
+    transition: 0.5s;
+}
+
+/*Burger menu*/
+
+#burger-menu{
+    display: inline-block;
+    position: fixed;
+    top: 20px;
+    z-index: 103;
+    left: 10px;
+    cursor: pointer;
+}
+
+#burger-menu > .burger-line-1, .burger-line-2, .burger-line-3{
+    width: 35px;
+    height: 5px;
+    background-color: rgb(4, 187, 117);
+    margin-top: 6px;
+    transition: 0.3s;
+}
+
+.change-menu .burger-line-1{
+    transform: rotate(-45deg) translate(-9px, 6px);
+}
+
+.change-menu .burger-line-2{
+    opacity: 0;
+}
+
+.change-menu .burger-line-3{
+    transform: rotate(45deg) translate(-8px, -8px);
+}
+
+
+.navbar.open{
+    left: 0;
+    transition:1s;
+}
+
+/*Burger menu*/
+
+.navbar > .navbar-body{
+    width: 100%;
+}
+
+.navbar > .navbar-body > .navbar-body__logo{
+    color: white;
+    font-size: 36px;
+    line-height: 1.5;
+    letter-spacing: 1px;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.navbar > .navbar-body > .navbar-body__logo > .logo-fed{
+    text-transform: uppercase;
+}
+
+.navbar > .navbar-body > .navbar-body__logo > .logo-folio{
+    color: rgb(4, 187, 117);
+}
+
+.navbar > .navbar-body > .navbar-body__menu{
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    flex-grow: 1;
+    padding: 0;
+}
+
+.navbar > .navbar-body > .navbar-body__menu > li{
+    position: relative;
+    width: 100%;
+    transition: 0.3s;
+}
+
+.navbar > .navbar-body > .navbar-body__menu > li > a{
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    line-height: 1.5;
+    font-size: 16px;
+    letter-spacing: 1px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 30px;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+.navbar > .navbar-body > .navbar-body__menu > li > a::before{
+    position: absolute;
+    content: '';
+    width: 12px;
+    height: 12px;
+    right: 0;
+    background-color: rgb(4, 187, 117);
+    margin-right: 20px;
+    transition: 0.2s;
+}
+
+.navbar > .navbar-body > .navbar-body__menu > li > a:hover::before{
+    background-color: white;
+    transition: 0.2s;
+}
+
+.navbar > .navbar-body > .navbar-body__menu > li > a:hover{
+    background-color: rgb(4, 187, 117);
+    transition: 0.3s;
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+    padding-left: 50px;
+}
+
+.navbar > .navbar-body > .navbar-body__info{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.navbar > .navbar-body > .navbar-body__info > img{
+    display: block;
+    width: 48px;
+}
+
+.navbar > .navbar-body > .navbar-body__info > a{
+    color: rgb(4, 187, 117);
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 14px;
+    line-height: 1.5;
+    letter-spacing: 1px;
+    text-decoration: none;
+}
+
+.navbar > .navbar-body > .navbar-body__info > .navbar-body__text{
+    color: lightgray;
+    text-transform: none;
+    letter-spacing: normal;
+    font-size: 16px;
+    text-align: center;
+    padding: 5px;
+    line-height: 1.5;
+    font-weight: normal;
+}
+
+.navbar > .navbar-body > .navbar-body__info > p{
+    color: rgb(78, 78, 78);
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 1px;
+    font-weight: 600;
+}
+
+.navbar > .navbar-body > .navbar-body__info > .info__com{
+    display: flex;
+}
+
+.navbar > .navbar-body > .navbar-body__info > .info__com > img{
+    display: block;
+    width: 48px;
+    margin: 0 20px 0 20px;
+}
+
+.header{
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.header::before{
+    position: absolute;
+    content: '';
+    background-color: rgba(0, 0, 0, 0.4);
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.header > .container > .header-body{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 101;
+    
+}
+
+.header > .container > .header-body > .header-title{
+    position: relative;
+    color: white;
+    font-family: 'Proxima Nova';
+    text-align: center;
+    line-height: 1.5em;
+    font-size: 48px;
+}
+
+.header > .container > .header-body > .header-infoblock{
+    display: flex;
+    text-align: center;
+    color: white;
+    z-index: 101;
+    line-height: 2em;
+}
+
+.header > .container > .header-body > .header-infoblock > .infoblock{
+    padding: 60px;
+    margin-bottom: -80px;
+    margin-top: 40px;
+    transition: 0.3s;
+}
+.header > .container > .header-body > .header-infoblock > .infoblock:hover{
+    background-color: rgb(4, 187, 117);
+    transition: 0.3s;
+}
+
+
+.header > .container > .header-body > .header-infoblock > .infoblock > .infoblock__img > img{
+    width: 64px;
+}
+
+.header > .container > .header-body > .header-infoblock > .infoblock > .infoblock__title{
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.header > .container > .header-body > .header-infoblock > .infoblock > .infoblock__text{
+    display: none;
+}
+
+.content{
+    background-color: rgb(233, 233, 233);
+}
+
+.content-body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.test{
+    display: none;
+}
+
+.test2{
+    display: block !important;
+}
+
+/* PARALLAX IMAGE*/
+.parallax-window {
+    min-height: 400px;
+    background: transparent;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
