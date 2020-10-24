@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FRONTEND - разработчик | Егор Шадрин</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/fonts/fonts.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/media.css">
+    <script src="js/parallax.js"></script>
+</head>
+<body class="hidden-y">
+
+    <div class="preloader">
+        <div class="preloader-body"></div>
+        <div class="preloader-text">
+            <span class="fed">f.e.d</span>folio...
+            <p>
+                <span class="fed">f.e.d</span><span class="folio">folio</span> is now loading...
+            </p>
+        </div>
+    </div>
+
+    <div id="burger-menu" id="burger-menu" class="burger-menu">
+        <div class="burger-line-1"></div>
+        <div class="burger-line-2"></div>
+        <div class="burger-line-3"></div>
+    </div>
+
+    <nav class="navbar" id="navbar">
+        <div class="navbar-body">
+            <div class="navbar-body__logo">
+                <span class="logo-fed">f.e.d</span><span class="logo-folio">folio</span>
+            </div>
+            <ul class="navbar-body__menu">
+                <li><a href="#">Главная</a></li>
+                <li><a href="#">Портфолио</a></li>
+                <li><a href="#">О себе</a></li>
+                <li><a href="#">Контакты</a></li>
+                <li><a href="#">Блог</a></li>
+            </ul>
+            <div class="navbar-body__info">
+                <img src="img/icons/vk.png" alt="">
+                <a href="https://vk.com/g3orgex">g3orgex</a>
+                <p class="navbar-body__text">
+                    Качественная разработка сайта любой сложности, верстка под любую CMS, создание дизайн-макета, SEO-оптимизация сайта
+                </p>
+                <p>Связаться со мной:</p>
+                <div class="info__com">
+                    <img src="img/icons/vk.png" alt="">
+                    <img src="img/icons/vk.png" alt="">
+                    <img src="img/icons/vk.png" alt="">
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <header class="container-full header parallax-window" data-parallax="scroll" data-image-src="img/header-bg.jpg">
+        <div class="container">
+            <div class="header-body">
+                <div class="header-title" id="header-title">
+                    Привет, я Егор<br>FrontEnd-Разработчик
+                </div>
+                <div class="header-infoblock">
+                    <div class="infoblock">
+                        <div class="infoblock__img">
+                            <img src="img/icons/dev.png" alt="Валдиная верстка">
+                        </div>
+                        <div class="infoblock__title">
+                            Валдиная верстка
+                        </div>
+                        <div class="infoblock__text">
+                            описание
+                        </div>
+                    </div>
+                    <div class="infoblock">
+                        <div class="infoblock__img">
+                            <img src="img/icons/dev.png" alt="Валдиная верстка">
+                        </div>
+                        <div class="infoblock__title">
+                            UI/UX Дизайн
+                        </div>
+                        <div class="infoblock__text">
+                            описание
+                        </div>
+                    </div>
+                    <div class="infoblock">
+                        <div class="infoblock__img">
+                            <img src="img/icons/dev.png" alt="Валдиная верстка">
+                        </div>
+                        <div class="infoblock__title">
+                            Адаптивная верстка
+                        </div>
+                        <div class="infoblock__text">
+                            описание
+                        </div>
+                    </div>
+                    <div class="infoblock">
+                        <div class="infoblock__img">
+                            <img src="img/icons/dev.png" alt="Валдиная верстка">
+                        </div>
+                        <div class="infoblock__title">
+                            Верстка под CMS
+                        </div>
+                        <div class="infoblock__text">
+                            описание
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <div class="container-full"></div>
+        <div class="content">
+            <div class="container">
+                <div class="content-body">
+                    <div class="content-body__title">
+                        Что такое FrontEnd Разработка?
+                    </div>
+                    <div class="content-body__text">
+                        Это создание максимально удобного пользовательского интерфейса и внешней части сайта в браузере.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let Preloader = document.querySelector('.preloader');
+        window.addEventListener('load', () =>{
+            Preloader.classList.add("hide");
+            setTimeout(() => {
+                Preloader.remove();
+                document.body.classList.remove('hidden-y');
+            }, 500)
+        });
+    </script>
+
+    <script>
+        let InfoBlock = document.querySelectorAll('.infoblock');
+        let Image = document.querySelectorAll('.infoblock__img');
+        let Text = document.querySelectorAll('.infoblock__text');
+        for(let i = 0; i < InfoBlock.length; i++){
+            InfoBlock[i].addEventListener('mouseover', function(){
+            Image[i].classList.add("test");
+            Text[i].classList.add('test2');
+        });
+        }
+
+        for(let i = 0; i < InfoBlock.length; i++){
+            InfoBlock[i].addEventListener('mouseout', function(){
+            Image[i].classList.remove("test");
+            Text[i].classList.remove('test2');
+        });
+        }
+    </script>
+
+    <script>
+        let BlockBurger = document.getElementById('burger-menu');
+        BlockBurger.addEventListener('click', OpenMenu);
+
+        function OpenMenu(){
+            let Menu = document.getElementById('navbar');
+            Menu.classList.toggle("open");
+            Menu.classList.toggle("burger-menu");
+            BlockBurger.classList.toggle("change-menu");
+        }
+    </script>
+</body>
+</html>
